@@ -1,0 +1,17 @@
+stages:
+  - validate
+
+image: hashicorp/terraform:1.9
+
+fmt:
+  stage: validate
+  script:
+    - cd terraform
+    - terraform fmt -check -recursive
+
+validate:
+  stage: validate
+  script:
+    - cd terraform
+    - terraform init -backend=false
+    - terraform validate

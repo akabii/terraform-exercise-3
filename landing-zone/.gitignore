@@ -1,0 +1,12 @@
+# Keep Terraform's local files and anything with secrets out of Git.
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+*.tfvars
+!*.tfvars.example
+
+# The lock file SHOULD be committed, so don't ignore it.
+!.terraform.lock.hcl
